@@ -1,0 +1,15 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ []
+
+ :dev-http {12345 "target/"}
+
+ :builds
+ {:app {:output-dir "target/"
+        :asset-path "."
+        :target :browser
+        :js-options {:js-provider :shadow}
+        :modules {:main {:init-fn custom-element-cljs.core/init!}}}}}
